@@ -3,6 +3,8 @@
 import React from "react";
 import { UserCheck, Zap, Eye, HeartHandshake, Briefcase, ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Marquee from "@/components/ui/Marquee";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const icons = [UserCheck, Zap, Eye, HeartHandshake, Briefcase, ShieldCheck];
 
@@ -20,13 +22,13 @@ export default function TrustSection() {
           <p className="text-sm text-gray-400 font-medium uppercase tracking-widest mb-6">
             {t("trustedBy")}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <Marquee>
             {logos.map((name) => (
-              <span key={name} dir="ltr" className="text-gray-300 font-bold text-sm md:text-base tracking-wide">
+              <span key={name} dir="ltr" className="text-gray-300 font-bold text-sm md:text-base tracking-wide whitespace-nowrap">
                 {name}
               </span>
             ))}
-          </div>
+          </Marquee>
         </div>
 
         {/* Divider */}
@@ -37,7 +39,7 @@ export default function TrustSection() {
           {items.map((item, i) => {
             const Icon = icons[i];
             return (
-              <div
+              <SpotlightCard
                 key={item.title}
                 className="group p-6 rounded-2xl border border-gray-100 bg-white hover:border-secondary/30 hover:shadow-card-hover transition-all duration-300"
               >
@@ -46,7 +48,7 @@ export default function TrustSection() {
                 </div>
                 <h3 className="text-base font-bold text-primary mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

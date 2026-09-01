@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Building2, Stamp, Users, Heart, MessageSquare, TrendingUp, MessageCircle, ArrowRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import SectionHeader from "@/components/ui/SectionHeader";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 import { localeHref, type Locale } from "@/i18n/routing";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -41,15 +42,14 @@ export default function ServicesSection() {
             const colorStyle = colorMap[colors[i]];
             const disabled = hrefs[i] === "#";
 
-            return (
-              <div
-                key={service.title}
-                className={`group relative p-7 rounded-2xl border border-gray-100 bg-white shadow-card transition-all duration-300 ${
-                  disabled
-                    ? "opacity-60 cursor-not-allowed"
-                    : "hover:border-secondary/30 hover:shadow-card-hover hover:-translate-y-0.5"
-                }`}
-              >
+            const cardClassName = `group relative p-7 rounded-2xl border border-gray-100 bg-white shadow-card transition-all duration-300 ${
+              disabled
+                ? "opacity-60 cursor-not-allowed"
+                : "hover:border-secondary/30 hover:shadow-card-hover hover:-translate-y-0.5"
+            }`;
+
+            const cardContent = (
+              <>
                 {service.badge && (
                   <div
                     className={`absolute top-4 end-4 px-2.5 py-1 rounded-full text-xs font-semibold ${
@@ -76,7 +76,17 @@ export default function ServicesSection() {
                     <ArrowRight className="w-4 h-4 rtl:rotate-180" />
                   </Link>
                 )}
+              </>
+            );
+
+            return disabled ? (
+              <div key={service.title} className={cardClassName}>
+                {cardContent}
               </div>
+            ) : (
+              <SpotlightCard key={service.title} className={cardClassName}>
+                {cardContent}
+              </SpotlightCard>
             );
           })}
         </div>

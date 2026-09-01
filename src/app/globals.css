@@ -217,6 +217,22 @@ h1, h2, h3, h4, h5, h6 {
   background: radial-gradient(circle, rgba(14, 169, 104, 0.35) 0%, rgba(14, 169, 104, 0) 70%);
 }
 
+/* Infinite marquee (trust-logo strip) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* Bottom mobile nav */
 @media (max-width: 767px) {
   .mobile-bottom-safe {

@@ -6,6 +6,7 @@ import { MessageCircle, CheckCircle2, Star, Building2, Users, Award } from "luci
 import { useLocale, useTranslations } from "next-intl";
 import { localeHref, type Locale } from "@/i18n/routing";
 import { whatsappLink } from "@/lib/whatsapp";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -13,10 +14,10 @@ export default function Hero() {
   const locale = useLocale() as Locale;
 
   const stats = [
-    { value: "500+", label: t("stats.businesses") },
-    { value: "48h", label: t("stats.processing") },
-    { value: "15+", label: t("stats.countries") },
-    { value: "98%", label: t("stats.satisfaction") },
+    { value: 500, suffix: "+", label: t("stats.businesses") },
+    { value: 48, suffix: "h", label: t("stats.processing") },
+    { value: 15, suffix: "+", label: t("stats.countries") },
+    { value: 98, suffix: "%", label: t("stats.satisfaction") },
   ];
 
   const trustBadges = [t("trustBadges.consultation"), t("trustBadges.licensed"), t("trustBadges.pricing")];
@@ -127,7 +128,9 @@ export default function Hero() {
         <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat) => (
             <div key={stat.label} className="glass rounded-2xl p-5 text-center border border-white/20">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              </div>
               <div className="text-xs text-white/60 font-medium">{stat.label}</div>
             </div>
           ))}

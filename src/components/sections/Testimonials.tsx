@@ -4,6 +4,7 @@ import React from "react";
 import { Star, Quote } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionHeader from "@/components/ui/SectionHeader";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const avatarColors = ["bg-secondary", "bg-accent", "bg-blue-600", "bg-purple-600", "bg-rose-600", "bg-teal-600"];
 
@@ -77,15 +78,21 @@ export default function Testimonials() {
         {/* Summary stats */}
         <div className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto text-center">
           <div>
-            <div className="text-2xl font-bold text-primary">4.9/5</div>
+            <div className="text-2xl font-bold text-primary">
+              <AnimatedCounter value={4.9} decimals={1} suffix="/5" />
+            </div>
             <div className="text-xs text-gray-500 mt-1">{t("avgRating")}</div>
           </div>
           <div className="border-x border-gray-100">
-            <div className="text-2xl font-bold text-primary">500+</div>
+            <div className="text-2xl font-bold text-primary">
+              <AnimatedCounter value={500} suffix="+" />
+            </div>
             <div className="text-xs text-gray-500 mt-1">{t("happyClients")}</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-primary">98%</div>
+            <div className="text-2xl font-bold text-primary">
+              <AnimatedCounter value={98} suffix="%" />
+            </div>
             <div className="text-xs text-gray-500 mt-1">{t("satisfactionRate")}</div>
           </div>
         </div>

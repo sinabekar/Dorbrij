@@ -81,7 +81,7 @@ export default function BlogPostPageContent() {
             {/* Main content */}
             <div className="lg:col-span-2">
               {/* Introduction */}
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 mb-6">
+              <div className="bg-surface rounded-2xl p-8 border border-gray-100 mb-6">
                 {post.content.map((paragraph, i) => (
                   <p key={i} className={`text-gray-700 text-base leading-relaxed ${i > 0 ? "mt-4" : ""}`}>
                     {paragraph}
@@ -90,8 +90,8 @@ export default function BlogPostPageContent() {
               </div>
 
               {/* Checklist */}
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 mb-6">
-                <h2 className="text-xl font-bold text-primary mb-6">{t("checklistTitle")}</h2>
+              <div className="bg-surface rounded-2xl p-8 border border-gray-100 mb-6">
+                <h2 className="text-xl font-bold text-heading mb-6">{t("checklistTitle")}</h2>
                 <div className="space-y-3">
                   {checkpoints.map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -104,7 +104,7 @@ export default function BlogPostPageContent() {
 
               {/* Key takeaways */}
               <div className="bg-secondary/5 border border-secondary/10 rounded-2xl p-8">
-                <h3 className="text-lg font-bold text-primary mb-4">{t("keyTakeawaysTitle")}</h3>
+                <h3 className="text-lg font-bold text-heading mb-4">{t("keyTakeawaysTitle")}</h3>
                 <ul className="space-y-2.5 text-sm text-gray-700">
                   {takeaways.map((takeaway, i) => (
                     <li key={i} className="flex items-start gap-2">
@@ -116,9 +116,9 @@ export default function BlogPostPageContent() {
               </div>
 
               {/* CTA in article */}
-              <div className="mt-8 p-6 rounded-2xl border border-secondary/20 bg-white flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="mt-8 p-6 rounded-2xl border border-secondary/20 bg-surface flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
-                  <h4 className="font-bold text-primary mb-1">{t("ctaInArticleTitle")}</h4>
+                  <h4 className="font-bold text-heading mb-1">{t("ctaInArticleTitle")}</h4>
                   <p className="text-sm text-gray-500">{t("ctaInArticleDescription")}</p>
                 </div>
                 <Link
@@ -133,7 +133,7 @@ export default function BlogPostPageContent() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Table of contents */}
-              <div className="p-6 rounded-2xl bg-white border border-gray-100 sticky top-24">
+              <div className="p-6 rounded-2xl bg-surface border border-gray-100 sticky top-24">
                 <h3 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">{t("tocTitle")}</h3>
                 <ol className="space-y-2.5">
                   {tableOfContents.map((item, i) => (
@@ -163,16 +163,16 @@ export default function BlogPostPageContent() {
       {relatedPosts.length > 0 && (
         <section className="pb-16 bg-background">
           <div className="container-custom">
-            <h3 className="text-xl font-bold text-primary mb-6">{t("relatedTitle")}</h3>
+            <h3 className="text-xl font-bold text-heading mb-6">{t("relatedTitle")}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {relatedPosts.map(([relatedSlug, related]) => (
                 <Link
                   key={relatedSlug}
                   href={localeHref(locale, `/blog/${relatedSlug}`)}
-                  className="group p-6 rounded-2xl bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-card transition-all"
+                  className="group p-6 rounded-2xl bg-surface border border-gray-100 hover:border-secondary/30 hover:shadow-card transition-all"
                 >
                   <span className="text-xs font-semibold text-secondary">{related.category}</span>
-                  <h4 className="font-bold text-primary mt-2 mb-3 group-hover:text-secondary transition-colors leading-snug">
+                  <h4 className="font-bold text-heading mt-2 mb-3 group-hover:text-secondary transition-colors leading-snug">
                     {related.title}
                   </h4>
                   <div className="flex items-center gap-2 text-xs text-gray-400">

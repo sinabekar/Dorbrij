@@ -28,7 +28,7 @@ export default function CTASection({ title, subtitle, variant = "dark" }: CTASec
       ? "bg-secondary"
       : "bg-background";
 
-  const titleClass = variant === "light" ? "text-primary" : "text-white";
+  const titleClass = variant === "light" ? "text-heading" : "text-white";
   const subtitleClass = variant === "light" ? "text-gray-600" : "text-white/70";
 
   return (
@@ -69,7 +69,7 @@ export default function CTASection({ title, subtitle, variant = "dark" }: CTASec
               href={localeHref(locale, "/contact")}
               className={`inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold rounded-full border transition-all duration-200 ${
                 variant === "light"
-                  ? "bg-white text-gray-800 border-gray-200 hover:bg-gray-50"
+                  ? "bg-surface text-gray-800 border-gray-200 hover:bg-gray-50"
                   : "bg-white/10 text-white border-white/20 hover:bg-white/20"
               }`}
             >

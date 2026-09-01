@@ -43,7 +43,7 @@ export default function ExitIntent() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in">
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden animate-fade-up">
+      <div className="relative bg-surface rounded-3xl shadow-2xl max-w-md w-full overflow-hidden animate-fade-up">
         {/* Top accent */}
         <div className="h-1.5 bg-secondary" />
 
@@ -61,7 +61,7 @@ export default function ExitIntent() {
             <Download className="w-7 h-7 text-secondary" />
           </div>
 
-          <h3 className="text-2xl font-bold text-primary mb-2">{t("title")}</h3>
+          <h3 className="text-2xl font-bold text-heading mb-2">{t("title")}</h3>
           <p className="text-gray-600 text-sm leading-relaxed mb-6">{t("description")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-3">

@@ -13,7 +13,7 @@ export default function WhyOmanSection() {
   const reasons = t.raw("reasons") as { value: string; title: string; description: string }[];
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden" aria-labelledby="why-oman-heading">
+    <section className="section-padding bg-surface relative overflow-hidden" aria-labelledby="why-oman-heading">
       {/* Subtle background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 end-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -50,7 +50,7 @@ export default function WhyOmanSection() {
             return (
               <div
                 key={reason.title}
-                className="group p-6 rounded-2xl border border-gray-100 bg-white hover:border-secondary/30 hover:shadow-card-hover transition-all duration-300"
+                className="group p-6 rounded-2xl border border-gray-100 bg-surface hover:border-secondary/30 hover:shadow-card-hover transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
@@ -60,7 +60,7 @@ export default function WhyOmanSection() {
                     <div className="text-xs font-bold text-accent uppercase tracking-widest mb-1">
                       {reason.value}
                     </div>
-                    <h3 className="text-base font-bold text-primary mb-2">{reason.title}</h3>
+                    <h3 className="text-base font-bold text-heading mb-2">{reason.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{reason.description}</p>
                   </div>
                 </div>

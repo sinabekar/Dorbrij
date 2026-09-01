@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import DorbrijLogo from "@/components/icons/DorbrijLogo";
+import ThemeToggle from "@/components/widgets/ThemeToggle";
 import { localeHref, type Locale } from "@/i18n/routing";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -47,7 +48,7 @@ export default function Navbar() {
   const navBg =
     isHome && !isScrolled
       ? "bg-transparent"
-      : "bg-white/85 backdrop-blur-xl border-b border-gray-100 shadow-[0_1px_0_rgba(10,15,13,0.03)]";
+      : "bg-surface/85 backdrop-blur-xl border-b border-gray-100 shadow-[0_1px_0_rgba(10,15,13,0.03)]";
 
   const textColor =
     isHome && !isScrolled ? "text-white/90 hover:text-white" : "text-gray-700 hover:text-gray-900";
@@ -83,7 +84,7 @@ export default function Navbar() {
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
-                <div className="bg-white rounded-2xl shadow-[0_8px_24px_-4px_rgba(10,15,13,0.12)] border border-gray-100 p-2 min-w-56">
+                <div className="bg-surface rounded-2xl shadow-[0_8px_24px_-4px_rgba(10,15,13,0.12)] border border-gray-100 p-2 min-w-56">
                   {services.map((item) => (
                     <Link
                       key={item.href}
@@ -115,6 +116,13 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle
+              className={
+                isHome && !isScrolled
+                  ? "border-white/20 text-white hover:bg-white/10"
+                  : "border-gray-200 text-gray-700 hover:bg-gray-100"
+              }
+            />
             <a
               href={whatsappLink(tw("messages.general"))}
               target="_blank"
@@ -128,6 +136,13 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle
+              className={
+                isHome && !isScrolled
+                  ? "border-white/20 text-white hover:bg-white/10"
+                  : "border-gray-200 text-gray-700 hover:bg-gray-100"
+              }
+            />
             <button
               className={`p-2 rounded-lg transition-colors ${
                 isHome && !isScrolled
@@ -145,7 +160,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="md:hidden bg-surface border-t border-gray-100">
           <div className="container-custom py-4 space-y-1">
             {services.map((item) => (
               <Link

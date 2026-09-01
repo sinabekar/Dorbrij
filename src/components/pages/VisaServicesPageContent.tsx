@@ -86,14 +86,14 @@ export default function VisaServicesPageContent() {
             const colors = visaColors[i];
             const applyHref = whatsappLink(tw(`messages.${visa.whatsappKey}`));
             return (
-              <div key={visa.id} id={visa.id} className={`rounded-3xl border ${colors.border} bg-white overflow-hidden`}>
+              <div key={visa.id} id={visa.id} className={`rounded-3xl border ${colors.border} bg-surface overflow-hidden`}>
                 <div className="p-8 md:p-10">
                   <div className="flex items-start gap-5 mb-6">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 ${colors.icon}`}>
                       <Icon className="w-7 h-7" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold text-primary mb-1">{visa.title}</h2>
+                      <h2 className="text-2xl font-bold text-heading mb-1">{visa.title}</h2>
                       <p className="text-gray-600 leading-relaxed">{visa.description}</p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@ export default function VisaServicesPageContent() {
       </section>
 
       {/* WhatsApp CTA — replaces the old multi-step form */}
-      <section className="section-padding bg-white" id="get-started">
+      <section className="section-padding bg-surface" id="get-started">
         <div className="container-custom max-w-xl">
           <SectionHeader badge={t("formBadge")} title={t("formTitle")} description={t("formDescription")} className="mb-10" />
           <a

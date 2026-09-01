@@ -30,7 +30,7 @@ export default function AIFeatures() {
             <Sparkles className="w-3 h-3" />
             {t("badge")}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-heading mb-4">
             {t("title")}
             <br />
             <span className="text-gradient-accent">{t("titleHighlight")}</span>
@@ -46,7 +46,7 @@ export default function AIFeatures() {
             return (
               <div
                 key={tool.title}
-                className="relative p-6 rounded-2xl bg-white border border-gray-100 shadow-card overflow-hidden group hover:border-secondary/30 hover:shadow-card-hover transition-all duration-300"
+                className="relative p-6 rounded-2xl bg-surface border border-gray-100 shadow-card overflow-hidden group hover:border-secondary/30 hover:shadow-card-hover transition-all duration-300"
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
@@ -58,7 +58,7 @@ export default function AIFeatures() {
                     </div>
                     <Badge variant="muted" className="text-xs">{tool.status}</Badge>
                   </div>
-                  <h3 className="text-base font-bold text-primary mb-2">{tool.title}</h3>
+                  <h3 className="text-base font-bold text-heading mb-2">{tool.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{tool.description}</p>
                 </div>
               </div>

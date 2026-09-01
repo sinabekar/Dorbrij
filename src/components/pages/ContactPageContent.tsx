@@ -47,7 +47,7 @@ export default function ContactPageContent() {
       </section>
 
       {/* Contact methods */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-surface">
         <div className="container-custom">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {methods.map((method, i) => {
@@ -89,8 +89,8 @@ export default function ContactPageContent() {
             {/* WhatsApp — primary path */}
             <div className="p-8 rounded-2xl bg-green-50 border border-green-100">
               <MessageCircle className="w-10 h-10 text-green-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{t("whatsappTitle")}</h3>
-              <p className="text-sm text-gray-600 mb-6 leading-relaxed">{t("whatsappDescription")}</p>
+              <h3 className="text-xl font-bold text-green-950 mb-2">{t("whatsappTitle")}</h3>
+              <p className="text-sm text-green-800 mb-6 leading-relaxed">{t("whatsappDescription")}</p>
               <a
                 href={whatsapp}
                 target="_blank"
@@ -102,7 +102,7 @@ export default function ContactPageContent() {
             </div>
 
             {/* Office hours */}
-            <div className="p-8 rounded-2xl bg-white border border-gray-100">
+            <div className="p-8 rounded-2xl bg-surface border border-gray-100">
               <div className="flex items-center gap-2 mb-5">
                 <Clock className="w-4 h-4 text-secondary" />
                 <h3 className="font-bold text-gray-900">{t("officeHoursTitle")}</h3>
@@ -123,7 +123,7 @@ export default function ContactPageContent() {
       </section>
 
       {/* Map placeholder */}
-      <section className="bg-white pb-20" id="map">
+      <section className="bg-surface pb-20" id="map">
         <div className="container-custom">
           <div className="rounded-3xl overflow-hidden border border-gray-100 h-72 bg-gray-100 flex items-center justify-center">
             <div className="text-center">

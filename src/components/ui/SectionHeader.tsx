@@ -32,7 +32,7 @@ export default function SectionHeader({
           {badge}
         </Badge>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-primary leading-[1.08] tracking-tight">
+      <h2 className="text-3xl md:text-4xl lg:text-[3.25rem] font-bold text-heading leading-[1.08] tracking-tight">
         {titleHighlight ? (
           <>
             {parts[0]}

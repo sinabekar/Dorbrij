@@ -22,10 +22,10 @@ export default function PrivacyPageContent() {
 
       <section className="section-padding bg-background">
         <div className="container-custom max-w-3xl">
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 md:p-10 space-y-8 text-sm text-gray-700 leading-relaxed">
+          <div className="bg-surface rounded-2xl border border-gray-100 p-8 md:p-10 space-y-8 text-sm text-gray-700 leading-relaxed">
             {sections.map((s, i) => (
               <div key={s.title}>
-                <h2 className="text-lg font-bold text-primary mb-3">{s.title}</h2>
+                <h2 className="text-lg font-bold text-heading mb-3">{s.title}</h2>
                 <p>
                   {s.body}
                   {i === sections.length - 1 && (

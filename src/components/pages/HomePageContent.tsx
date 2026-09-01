@@ -38,7 +38,7 @@ export default function HomePageContent() {
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 {t("formBadge")}
               </span>
-              <h2 id="form-heading" className="text-3xl md:text-4xl font-bold text-primary mb-5 leading-tight">
+              <h2 id="form-heading" className="text-3xl md:text-4xl font-bold text-heading mb-5 leading-tight">
                 {t("formTitle")}{" "}
                 <span className="text-gradient-accent">{t("formTitleHighlight")}</span>
               </h2>
@@ -54,7 +54,7 @@ export default function HomePageContent() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-card p-8 md:p-10 text-center">
+            <div className="bg-surface rounded-3xl border border-gray-100 shadow-card p-8 md:p-10 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <MessageCircle className="w-8 h-8 text-green-600" />
               </div>

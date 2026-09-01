@@ -42,7 +42,7 @@ export default function ServicesSection() {
             const colorStyle = colorMap[colors[i]];
             const disabled = hrefs[i] === "#";
 
-            const cardClassName = `group relative p-7 rounded-2xl border border-gray-100 bg-white shadow-card transition-all duration-300 ${
+            const cardClassName = `group relative p-7 rounded-2xl border border-gray-100 bg-surface shadow-card transition-all duration-300 ${
               disabled
                 ? "opacity-60 cursor-not-allowed"
                 : "hover:border-secondary/30 hover:shadow-card-hover hover:-translate-y-0.5"
@@ -64,7 +64,7 @@ export default function ServicesSection() {
                   <Icon className={`w-6 h-6 ${colorStyle.icon}`} />
                 </div>
 
-                <h3 className="text-lg font-bold text-primary mb-2">{service.title}</h3>
+                <h3 className="text-lg font-bold text-heading mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-5">{service.description}</p>
 
                 {!disabled && (

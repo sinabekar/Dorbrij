@@ -1,27 +1,29 @@
 @import "tailwindcss";
 
 /*
-  Design system — refreshed to match the modern fintech/legal-tech register
-  (Stripe Atlas, Mercury, Ramp, Linear): a near-black ink surface, a single
-  saturated emerald accent doing all the work color used to be spread across
-  green+gold for, warm-neutral off-white backgrounds instead of stark white,
-  and a larger radius scale for a softer, more "app" feel than the old
-  corporate-brochure look.
+  Design system — modern fintech/legal-tech register (Stripe Atlas, Mercury,
+  Ramp, Linear): a single saturated emerald accent doing the work color used
+  to be spread across green+gold for, warm-neutral off-white backgrounds
+  instead of stark white, and a larger radius scale for a softer, more "app"
+  feel than the old corporate-brochure look. The dark sections use a deep
+  emerald-tinted charcoal rather than true black — pure black read cold for
+  a consultancy service; this keeps the premium dark-surface look while
+  feeling warmer and less "infra tool."
 */
 @theme {
-  --color-primary: #0A0F0D;
+  --color-primary: #11201A;
   --color-secondary: #0EA968;
   --color-accent: #E8B84B;
   --color-background: #F7F8F6;
   --color-surface: #FFFFFF;
-  --color-text: #0A0F0D;
+  --color-text: #11201A;
   --color-text-muted: #5B6B64;
   --color-border: #E4E8E5;
   --color-success: #16A34A;
 
   --color-primary-50: #F2F5F4;
   --color-primary-100: #E3E9E6;
-  --color-primary-900: #0A0F0D;
+  --color-primary-900: #11201A;
 
   --color-secondary-50: #EAFBF3;
   --color-secondary-100: #CFF5E2;
@@ -55,7 +57,7 @@ html {
 
 body {
   background-color: #F7F8F6;
-  color: #0A0F0D;
+  color: #11201A;
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -128,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-primary {
-  background: linear-gradient(180deg, #0A0F0D 0%, #101713 100%);
+  background: linear-gradient(180deg, #11201A 0%, #16241D 100%);
 }
 
 .gradient-secondary {
@@ -141,10 +143,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Solid ink instead of the old diagonal green→navy gradient — reads more
    like a premium dark app surface (Linear/Mercury) than a brochure banner.
-   The radial glow that used to differentiate hero sections now comes from
-   .glow-emerald placed as a separate absolutely-positioned element. */
+   Warmed from true black to an emerald-tinted charcoal so it doesn't read
+   cold for a consultancy service. The radial glow that used to
+   differentiate hero sections now comes from .glow-emerald and
+   .glow-gold placed as separate absolutely-positioned elements. */
 .gradient-hero {
-  background: #0A0F0D;
+  background: #11201A;
 }
 
 .text-gradient-accent {
@@ -212,9 +216,14 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: none;
 }
 
-/* Soft radial glow used behind dark sections instead of a busy gradient */
+/* Soft radial glows used behind dark sections instead of a busy gradient.
+   Emerald + a touch of gold together read warmer than emerald alone. */
 .glow-emerald {
   background: radial-gradient(circle, rgba(14, 169, 104, 0.35) 0%, rgba(14, 169, 104, 0) 70%);
+}
+
+.glow-gold {
+  background: radial-gradient(circle, rgba(232, 184, 75, 0.22) 0%, rgba(232, 184, 75, 0) 70%);
 }
 
 /* Infinite marquee (trust-logo strip) */

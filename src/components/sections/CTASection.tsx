@@ -41,7 +41,7 @@ export default function CTASection({ title, subtitle, variant = "dark" }: CTASec
         }}
       />
       <div className="absolute top-0 end-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 start-0 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 start-0 w-80 h-80 glow-gold rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative container-custom">
         <div className="max-w-2xl mx-auto text-center space-y-8">

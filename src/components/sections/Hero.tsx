@@ -38,9 +38,9 @@ export default function Hero() {
           backgroundSize: "48px 48px",
         }}
       />
-      {/* Glow blobs */}
+      {/* Glow blobs — emerald + a touch of gold for warmth */}
       <div className="absolute top-1/4 end-0 w-[32rem] h-[32rem] glow-emerald rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 start-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 start-1/4 w-96 h-96 glow-gold rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative container-custom pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

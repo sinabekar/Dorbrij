@@ -9,8 +9,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  basePath: '/Bawaba',
-  assetPrefix: '/Bawaba/',
+  basePath: '/Dorbrij',
+  assetPrefix: '/Dorbrij/',
 };
 
 export default withNextIntl(nextConfig);

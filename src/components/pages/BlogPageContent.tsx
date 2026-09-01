@@ -54,7 +54,7 @@ export default function BlogPageContent() {
       </section>
 
       {/* Categories */}
-      <div className="bg-white border-b border-gray-100 sticky top-[64px] z-30">
+      <div className="bg-surface border-b border-gray-100 sticky top-[64px] z-30">
         <div className="container-custom py-4">
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {categories.map((cat) => (
@@ -78,7 +78,7 @@ export default function BlogPageContent() {
             <div className="mb-10">
               <Link
                 href={localeHref(locale, `/blog/${featured.slug}`)}
-                className="group block p-8 md:p-10 rounded-3xl bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-card-hover transition-all"
+                className="group block p-8 md:p-10 rounded-3xl bg-surface border border-gray-100 hover:border-secondary/30 hover:shadow-card-hover transition-all"
               >
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
@@ -90,7 +90,7 @@ export default function BlogPageContent() {
                         {t("featuredLabel")}
                       </span>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">
+                    <h2 className="text-2xl md:text-3xl font-bold text-heading mb-4 leading-tight group-hover:text-secondary transition-colors">
                       {featured.title}
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
@@ -120,7 +120,7 @@ export default function BlogPageContent() {
               <Link
                 key={post.slug}
                 href={localeHref(locale, `/blog/${post.slug}`)}
-                className="group p-6 rounded-2xl bg-white border border-gray-100 hover:border-secondary/30 hover:shadow-card-hover transition-all"
+                className="group p-6 rounded-2xl bg-surface border border-gray-100 hover:border-secondary/30 hover:shadow-card-hover transition-all"
               >
                 {/* Card image placeholder */}
                 <div className="aspect-video rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 mb-5 flex items-center justify-center border border-gray-100">
@@ -133,7 +133,7 @@ export default function BlogPageContent() {
                   </span>
                 </div>
 
-                <h2 className="font-bold text-primary text-base mb-2 leading-tight group-hover:text-secondary transition-colors line-clamp-2">
+                <h2 className="font-bold text-heading text-base mb-2 leading-tight group-hover:text-secondary transition-colors line-clamp-2">
                   {post.title}
                 </h2>
                 <p className="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
@@ -155,9 +155,9 @@ export default function BlogPageContent() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-surface">
         <div className="container-custom max-w-xl text-center">
-          <h3 className="text-2xl font-bold text-primary mb-3">{t("newsletterTitle")}</h3>
+          <h3 className="text-2xl font-bold text-heading mb-3">{t("newsletterTitle")}</h3>
           <p className="text-gray-500 text-sm mb-6">{t("newsletterDescription")}</p>
           <NewsletterForm variant="light" />
         </div>

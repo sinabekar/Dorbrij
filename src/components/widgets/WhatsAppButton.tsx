@@ -12,7 +12,7 @@ export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 end-6 z-40 flex flex-col items-end gap-3">
       {showTooltip && (
-        <div className="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-4 max-w-xs animate-fade-up">
+        <div className="relative bg-surface rounded-2xl shadow-xl border border-gray-100 p-4 max-w-xs animate-fade-up">
           <button
             onClick={() => setShowTooltip(false)}
             className="absolute top-3 end-3 text-gray-400 hover:text-gray-600"

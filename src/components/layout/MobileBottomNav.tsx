@@ -30,7 +30,7 @@ export default function MobileBottomNav() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 start-0 end-0 z-40 bg-white border-t border-gray-100 mobile-bottom-safe"
+      className="md:hidden fixed bottom-0 start-0 end-0 z-40 bg-surface border-t border-gray-100 mobile-bottom-safe"
       aria-label={t("navLabel")}
     >
       <div className="flex items-center justify-around h-16 px-2">

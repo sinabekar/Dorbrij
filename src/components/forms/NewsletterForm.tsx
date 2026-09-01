@@ -39,7 +39,7 @@ export default function NewsletterForm({ variant = "dark", className = "" }: New
         className={`flex-1 px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-1 transition-colors ${
           variant === "dark"
             ? "bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:ring-accent"
-            : "bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-secondary focus:ring-secondary"
+            : "bg-surface border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-secondary focus:ring-secondary"
         }`}
       />
       <button

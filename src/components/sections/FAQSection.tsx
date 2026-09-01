@@ -16,7 +16,7 @@ export default function FAQSection({ limit }: { limit?: number }) {
   const items = limit ? faqs.slice(0, limit) : faqs;
 
   return (
-    <section className="section-padding bg-white" aria-labelledby="faq-heading">
+    <section className="section-padding bg-surface" aria-labelledby="faq-heading">
       <div className="container-custom max-w-3xl">
         <SectionHeader
           badge={t("badge")}

@@ -36,7 +36,7 @@ export default function Testimonials() {
           {testimonials.map((item, index) => (
             <div
               key={item.name}
-              className="relative p-7 rounded-2xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-secondary/20 transition-all duration-300"
+              className="relative p-7 rounded-2xl bg-surface border border-gray-100 shadow-card hover:shadow-card-hover hover:border-secondary/20 transition-all duration-300"
             >
               <Quote className="absolute top-5 end-5 w-8 h-8 text-gray-100" />
 
@@ -78,19 +78,19 @@ export default function Testimonials() {
         {/* Summary stats */}
         <div className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto text-center">
           <div>
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-heading">
               <AnimatedCounter value={4.9} decimals={1} suffix="/5" />
             </div>
             <div className="text-xs text-gray-500 mt-1">{t("avgRating")}</div>
           </div>
           <div className="border-x border-gray-100">
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-heading">
               <AnimatedCounter value={500} suffix="+" />
             </div>
             <div className="text-xs text-gray-500 mt-1">{t("happyClients")}</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-heading">
               <AnimatedCounter value={98} suffix="%" />
             </div>
             <div className="text-xs text-gray-500 mt-1">{t("satisfactionRate")}</div>

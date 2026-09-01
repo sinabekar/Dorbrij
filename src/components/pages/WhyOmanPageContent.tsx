@@ -51,7 +51,7 @@ export default function WhyOmanPageContent() {
       </section>
 
       {/* Key facts */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-surface">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {keyFacts.map((fact, i) => {
@@ -59,7 +59,7 @@ export default function WhyOmanPageContent() {
               return (
                 <div key={fact.label} className="text-center p-5 rounded-2xl border border-gray-100 bg-background">
                   <Icon className="w-5 h-5 text-secondary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-primary mb-1">{fact.value}</div>
+                  <div className="text-2xl font-bold text-heading mb-1">{fact.value}</div>
                   <div className="text-xs text-gray-500 leading-tight">{fact.label}</div>
                 </div>
               );
@@ -76,11 +76,11 @@ export default function WhyOmanPageContent() {
             {advantages.map((adv, i) => {
               const Icon = advantageIcons[i];
               return (
-                <div key={adv.title} className="p-8 rounded-2xl border border-gray-100 bg-white hover:border-secondary/30 hover:shadow-card transition-all">
+                <div key={adv.title} className="p-8 rounded-2xl border border-gray-100 bg-surface hover:border-secondary/30 hover:shadow-card transition-all">
                   <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-secondary" />
                   </div>
-                  <h3 className="text-lg font-bold text-primary mb-3">{adv.title}</h3>
+                  <h3 className="text-lg font-bold text-heading mb-3">{adv.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{adv.description}</p>
                 </div>
               );
@@ -129,7 +129,7 @@ export default function WhyOmanPageContent() {
       </section>
 
       {/* Business opportunities */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-surface">
         <div className="container-custom">
           <SectionHeader
             badge={t("opportunitiesBadge")}

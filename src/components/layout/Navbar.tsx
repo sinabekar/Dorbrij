@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import DorbrijLogo from "@/components/icons/DorbrijLogo";
-import ThemeToggle from "@/components/widgets/ThemeToggle";
 import { localeHref, type Locale } from "@/i18n/routing";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -116,13 +115,6 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle
-              className={
-                isHome && !isScrolled
-                  ? "border-white/20 text-white hover:bg-white/10"
-                  : "border-gray-200 text-gray-700 hover:bg-gray-100"
-              }
-            />
             <a
               href={whatsappLink(tw("messages.general"))}
               target="_blank"
@@ -136,13 +128,6 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle
-              className={
-                isHome && !isScrolled
-                  ? "border-white/20 text-white hover:bg-white/10"
-                  : "border-gray-200 text-gray-700 hover:bg-gray-100"
-              }
-            />
             <button
               className={`p-2 rounded-lg transition-colors ${
                 isHome && !isScrolled

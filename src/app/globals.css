@@ -1,15 +1,11 @@
 @import "tailwindcss";
 
-/* Manual light/dark toggle (a .dark class on <html>, set by ThemeProvider)
-   rather than Tailwind's default prefers-color-scheme-only dark: variant. */
-@custom-variant dark (&:where(.dark, .dark *));
-
 /*
   Design system — modern fintech/legal-tech register (Stripe Atlas, Mercury,
   Ramp, Linear): a single saturated emerald accent doing the work color used
-  to be spread across green+gold for, warm-neutral off-white backgrounds
-  instead of stark white, and a larger radius scale for a softer, more "app"
-  feel than the old corporate-brochure look. The dark sections use a deep
+  to be spread across green+gold for, dark-first surfaces instead of a
+  bright brochure look, and a larger radius scale for a softer, more "app"
+  feel than the old corporate-brochure look. Dark-only by design: a deep
   emerald-tinted charcoal rather than true black — pure black read cold for
   a consultancy service; this keeps the premium dark-surface look while
   feeling warmer and less "infra tool."
@@ -18,18 +14,16 @@
   --color-primary: #11201A;
   --color-secondary: #0EA968;
   --color-accent: #E8B84B;
-  --color-background: #F7F8F6;
-  --color-surface: #FFFFFF;
-  --color-text: #11201A;
-  --color-text-muted: #5B6B64;
-  --color-border: #E4E8E5;
+  --color-background: #0D1712;
+  --color-surface: #182420;
+  --color-text: #E4ECE8;
+  --color-text-muted: #8CA098;
+  --color-border: #253530;
   --color-success: #16A34A;
   /* Separate from --color-primary on purpose: --color-primary also backs
-     bg-primary (the Hero/Footer/HowItWorks ink sections), which must stay
-     dark in BOTH themes. --color-heading is only ever used for text-heading
-     (card/section titles on a surface that does invert), so it's free to
-     flip to a light value in dark mode without dragging bg-primary along. */
-  --color-heading: #11201A;
+     bg-primary (the Hero/Footer/HowItWorks ink sections). --color-heading
+     is only ever used for text-heading (card/section titles). */
+  --color-heading: #F0F5F2;
 
   --color-primary-50: #F2F5F4;
   --color-primary-100: #E3E9E6;
@@ -45,6 +39,24 @@
   --color-accent-500: #E8B84B;
   --color-accent-600: #C99A2E;
 
+  /* Overrides Tailwind's default (light) gray scale so every text-gray-*,
+     bg-gray-*, border-gray-* utility across the codebase reads correctly
+     against the dark background/surface above, with zero component
+     changes. NOT --color-white: text-white (120+ instances) is used
+     throughout the always-dark Hero/Footer/HowItWorks sections and must
+     stay literally white; bg-white (cards) is handled per-component via
+     bg-surface instead, precisely to avoid colliding with that. */
+  --color-gray-50: #16221C;
+  --color-gray-100: #1C2A23;
+  --color-gray-200: #24352C;
+  --color-gray-300: #33473C;
+  --color-gray-400: #5C7268;
+  --color-gray-500: #7E958A;
+  --color-gray-600: #A6BBAF;
+  --color-gray-700: #C3D3C9;
+  --color-gray-800: #DCE7E1;
+  --color-gray-900: #F0F5F2;
+
   --font-heading: var(--font-jakarta);
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
@@ -57,65 +69,12 @@
   --radius-3xl: 2.25rem;
 }
 
-/*
-  Dark mode. Two kinds of section already exist in this design:
-  - "Always-dark" sections (Hero, Footer, HowItWorks, CTASection's default
-    variant, every page's top gradient-hero band) use bg-primary/text-white
-    unconditionally — that's a deliberate brand accent, not a theme, so it
-    stays exactly as-is in both light and dark mode. Nothing below touches
-    --color-primary or text-white for that reason.
-  - "Light" sections (cards, body copy, everything using bg-white,
-    text-gray-*, border-gray-*, text-primary) need to invert. Rather than
-    adding dark: to every one of those ~250 individual utility usages,
-    this overrides the underlying CSS variables Tailwind's own gray/white
-    utilities already read from — text-gray-600, bg-white, border-gray-100
-    etc. all repaint automatically for any element under a .dark ancestor,
-    with zero component changes. --color-heading, --color-surface and
-    --color-background are this project's own tokens and get the same
-    treatment.
-*/
-.dark {
-  --color-heading: #F0F5F2;
-  --color-surface: #182420;
-  --color-background: #0D1712;
-  --color-border: #253530;
-  --color-text: #E4ECE8;
-  --color-text-muted: #8CA098;
-
-  /* NOT --color-white: text-white (120+ instances) is used throughout the
-     always-dark sections above and must stay literally white in both
-     themes. bg-white (cards) is handled per-component via bg-surface
-     instead, precisely to avoid colliding with that. */
-  --color-gray-50: #16221C;
-  --color-gray-100: #1C2A23;
-  --color-gray-200: #24352C;
-  --color-gray-300: #33473C;
-  --color-gray-400: #5C7268;
-  --color-gray-500: #7E958A;
-  --color-gray-600: #A6BBAF;
-  --color-gray-700: #C3D3C9;
-  --color-gray-800: #DCE7E1;
-  --color-gray-900: #F0F5F2;
-}
-
-.dark .shadow-card {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.dark .shadow-card-hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
-}
-
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
-}
-
-html.dark {
   color-scheme: dark;
 }
 
@@ -125,7 +84,6 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -224,11 +182,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shadow-card {
-  box-shadow: 0 1px 2px rgba(10, 15, 13, 0.04), 0 2px 8px rgba(10, 15, 13, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .shadow-card-hover {
-  box-shadow: 0 4px 10px rgba(10, 15, 13, 0.06), 0 16px 40px rgba(10, 15, 13, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .section-padding {

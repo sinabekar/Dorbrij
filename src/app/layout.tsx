@@ -7,7 +7,6 @@ import MobileBottomNav from "@/components/layout/MobileBottomNav";
 import WhatsAppButton from "@/components/widgets/WhatsAppButton";
 import FloatingCTA from "@/components/widgets/FloatingCTA";
 import ExitIntent from "@/components/widgets/ExitIntent";
-import ThemeProvider, { themeInitScript } from "@/components/theme/ThemeProvider";
 import messages from "../../messages/fa.json";
 
 // Loaded via a plain <link> rather than next/font/google: Turbopack's
@@ -68,21 +67,17 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
         />
-        {/* Runs before first paint so there's no flash of the wrong theme. */}
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col bg-background">
-        <ThemeProvider>
-          <NextIntlClientProvider locale="fa" messages={messages}>
-            <Navbar />
-            <main className="flex-1 pb-16 md:pb-0">{children}</main>
-            <Footer />
-            <MobileBottomNav />
-            <WhatsAppButton />
-            <FloatingCTA />
-            <ExitIntent />
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider locale="fa" messages={messages}>
+          <Navbar />
+          <main className="flex-1 pb-16 md:pb-0">{children}</main>
+          <Footer />
+          <MobileBottomNav />
+          <WhatsAppButton />
+          <FloatingCTA />
+          <ExitIntent />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

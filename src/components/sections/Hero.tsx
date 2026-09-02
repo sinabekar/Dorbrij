@@ -215,7 +215,7 @@ function HeroIllustration() {
       </div>
 
       {/* Floating cards */}
-      <div className="absolute -top-5 end-[-1.25rem] glass rounded-2xl p-4 border border-white/20 shadow-lg animate-float">
+      <div className="absolute top-[-75px] end-[-1.25rem] glass rounded-2xl p-4 border border-white/20 shadow-lg animate-float">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">
             <Award className="w-4 h-4 text-accent" />
@@ -228,7 +228,7 @@ function HeroIllustration() {
       </div>
 
       <div
-        className="absolute -bottom-5 start-[-1.25rem] glass rounded-2xl p-4 border border-white/20 shadow-lg animate-float"
+        className="absolute bottom-[-90px] start-[-1.25rem] glass rounded-2xl p-4 border border-white/20 shadow-lg animate-float"
         style={{ animationDelay: "1.5s" }}
       >
         <div className="flex items-center gap-2">

@@ -1,0 +1,9 @@
+# Overlay for building from an `out/` produced elsewhere (`npm run build`),
+# instead of compiling inside the image. Use it when the machine doing the
+# build can't compile — too little RAM, or no registry access to node:22-alpine:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prebuilt.yml up -d --build
+services:
+  web:
+    build:
+      dockerfile: Dockerfile.prebuilt

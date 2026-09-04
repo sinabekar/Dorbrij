@@ -21,6 +21,11 @@ COPY . .
 ARG NEXT_PUBLIC_BASE_PATH=""
 ENV NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH
 ENV NEXT_TELEMETRY_DISABLED=1
+# Hard ceiling on the build's heap. The server this deploys to runs eleven
+# other containers on 3GB of RAM, so an unbounded `next build` risks the
+# kernel OOM-killer picking off someone else's database instead of this
+# build. Capped, Node fails on its own terms and nothing else is touched.
+ENV NODE_OPTIONS=--max-old-space-size=768
 
 RUN npm run build
 

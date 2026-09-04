@@ -23,6 +23,9 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
+        env:
+          # GitHub Pages serves this repo from /Dorbrij, not the domain root.
+          NEXT_PUBLIC_BASE_PATH: /Dorbrij
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

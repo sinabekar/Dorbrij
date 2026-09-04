@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+.next
+*.md
+info.txt
+.DS_Store
+.env
+.env.*
+Dockerfile
+.dockerignore
+docker-compose.yml
+deploy/

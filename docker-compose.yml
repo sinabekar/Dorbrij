@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.prebuilt
+    image: dorbrij-web:latest
+    container_name: dorbrij-web
+    restart: unless-stopped
+    # Bound to loopback only: the host nginx reverse-proxies to it, matching
+    # how omatekk-vision-hub (127.0.0.1:3010) is wired on this server.
+    ports:
+      - "127.0.0.1:3020:80"

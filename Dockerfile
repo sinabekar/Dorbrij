@@ -1,5 +1,8 @@
 # syntax=docker/dockerfile:1
 
+# The site is a fully static `output: 'export'` build with no backend, so the
+# runtime image is just nginx over the exported files — no Node in production.
+
 # ---- build ----
 # --platform=$BUILDPLATFORM keeps this stage on the builder's native arch even
 # when targeting linux/amd64 from an arm64 Mac: `next build` here only emits

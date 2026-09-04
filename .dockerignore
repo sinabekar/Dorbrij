@@ -2,16 +2,13 @@
 .github
 node_modules
 .next
+out
 *.md
 info.txt
 .DS_Store
 .env
 .env.*
-Dockerfile*
+Dockerfile
 .dockerignore
-docker-compose*.yml
+docker-compose.yml
 deploy/
-
-# `out/` is deliberately NOT ignored: Dockerfile.prebuilt copies it in. The
-# multi-stage Dockerfile regenerates it during `npm run build`, so a stale
-# local copy in the context is harmless there.

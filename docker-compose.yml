@@ -2,13 +2,8 @@ services:
   web:
     build:
       context: .
-      # Self-contained: compiles the app and serves the export. `out/` is not
-      # expected to exist in the checkout, so this is the only Dockerfile that
-      # works from a fresh clone. Dockerfile.prebuilt is the alternative for
-      # machines that can't run the build — see docker-compose.prebuilt.yml.
-      dockerfile: Dockerfile
       args:
-        # Empty: served from the domain root (dorbrij.ir).
+        # Empty: the site is served from the domain root (dorbrij.ir).
         NEXT_PUBLIC_BASE_PATH: ""
     image: dorbrij-web:latest
     container_name: dorbrij-web
